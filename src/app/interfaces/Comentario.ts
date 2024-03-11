@@ -1,7 +1,8 @@
 export interface Comentario{
     id?: number;
-    tritulo: string;
+    titulo: string;
     creador: string;
     fechaCreacion: Date;
+    texto: string;
     
 }
