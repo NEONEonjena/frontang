@@ -2,20 +2,25 @@
 <form [formGroup]="agregarComentario" (ngSubmit)="agregar()">
   <div class="mb-3">
     <label for="titulo"class="form-label">Título</label>
-    <input formControlName="titulo" type="text" class="form-control" id="titulo" placeholder="Título del comentario">
-    <span *ngIf="agregarComentario.get('titulo')?.invalid" class="text-danger">
+    <input formControlName="titulo" type="text" class="form-control" id="titulo" placeholder="Título del comentario" autocomplete="off">
+    <span *ngIf="agregarComentario.get('titulo')?.invalid && agregarComentario.get('titulo')?.touched" class="text-danger">
       El <strong>titulo</strong> es requerido
     </span>
   </div>
   <div class="mb-3">
     <label for="creador" class="form-label">Creador</label>
-    <input formControlName="creador" class="form-control" id="creador" placeholder="Su nombre">
-
+    <input formControlName="creador" class="form-control" id="creador" placeholder="Su nombre" autocomplete="off">
+    <span *ngIf="agregarComentario.get('creador')?.invalid && agregarComentario.get('creador')?.touched" class="text-danger">
+      Su <strong>nombre</strong> es requerido
+    </span>
     <div class="mb-3">
       <label for="texto" class="form-label">Texto</label>
-      <textarea formControlName="texto" class="form-control" id="texto" rows="8"></textarea>
+      <textarea formControlName="texto" class="form-control" id="texto" autocomplete="off" rows="8"></textarea>
+      <span *ngIf="agregarComentario.get('texto')?.invalid && agregarComentario.get('texto')?.touched" class="text-danger">
+      Su <strong>comentario</strong> es requerido
+    </span>
     </div>
   </div>
-  <button type="submit" routerLink="/ver-comentario{:id}" class="btn btn-primary float-end">Aceptar</button>
+  <button type="submit" [disabled]="agregarComentario.invalid" routerLink="/ver-comentario{:id}" class="btn btn-primary float-end">Aceptar</button>
   <button type="button" routerLink="/" class="btn btn-secondary">Volver</button>
 </form>
