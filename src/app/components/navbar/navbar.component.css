@@ -1,0 +1,16 @@
+.navbar-container{
+  display: flex;
+  justify-content: space-between flex;
+  align-items: center;
+}
+
+.image{
+  display: inline-block;
+  height: 40px;
+  align-items: center;
+}
+
+.title{
+  margin-left: 10px;
+  display: inline-block;
+}

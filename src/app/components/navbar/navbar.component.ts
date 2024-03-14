@@ -7,8 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  img = "https://angular.gallerycdn.vsassets.io/extensions/angular/ng-template/17.2.2/1707952560052/Microsoft.VisualStudio.Services.Icons.Default";
-
+  img = "https://cdn.iconscout.com/icon/premium/png-256-thumb/home-1948668-1660480.png?f=webp&w=256";
   constructor() { }
 
   ngOnInit(): void {

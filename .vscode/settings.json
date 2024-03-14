@@ -1,0 +1,31 @@
+{
+    "folder-color.pathColors": [
+      {
+        "folderPath": "frontang\\e2e\\src\\"
+      },
+      {
+        "folderPath": "frontang\\src\\",
+        "color": "foldercolorizer.PureGold"
+      },
+      {
+        "folderPath": "frontang\\.vscode\\settings.json\\"
+      },
+      {
+        "folderPath": "frontang\\src\\app\\components\\"
+      },
+      {
+        "folderPath": "frontang\\src\\app\\services\\"
+      },
+      {
+        "folderPath": "frontang\\src\\app\\"
+      },
+      {
+        "folderPath": "frontang\\src\\environments\\"
+      },
+      {
+        "folderPath": "frontang\\src\\main.ts\\"
+      }
+    ],
+    "workbench.colorCustomizations": {},
+    "livePreview.defaultPreviewPath": "/src/app/components/agregar-editar-comentario/agregar-editar-comentario.component.html"
+}
