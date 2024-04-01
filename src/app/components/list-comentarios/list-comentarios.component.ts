@@ -27,7 +27,8 @@ export class ListComentariosComponent implements OnInit {
         console.log(error);//en caso de error se imprime en consola el error
       });
     }
-  eliminarComentario(id: number){
+  
+  eliminarComentario(id: any){
     console.log(id);
   }
 }
