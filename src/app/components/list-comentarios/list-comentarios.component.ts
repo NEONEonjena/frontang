@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { error } from 'console';
 import { Comentario } from 'src/app/interfaces/Comentario';
 import { ComentarioService } from 'src/app/services/comentario.service';
 
@@ -10,20 +9,7 @@ import { ComentarioService } from 'src/app/services/comentario.service';
 })
 export class ListComentariosComponent implements OnInit {
 
-  listComentarios: Comentario[] = [
-    {
-      titulo: "Angular",
-      creador: "Fernado",
-      fechaCreacion: new Date(),
-      texto: "Framework para crear SPA"
-    },
-    {
-      titulo: "React",
-      creador: "Miguel",
-      fechaCreacion: new Date(),
-      texto: "Libreria para crear SPA"
-    },
-  ]
+  listComentarios: Comentario[] = []
   comentarioService: any;
 
   constructor(private ComentarioService: ComentarioService) { }
@@ -33,10 +19,12 @@ export class ListComentariosComponent implements OnInit {
   }
 
   getComentarios() {
-    this.comentarioService.getListComentarios().suscribe((data: any) => {//se obtienen los datos de la API con la función getListComentarios() y se almacenan en la variable data
-      console.log(data);//se imprime en consola los datos obtenidos de la API
-    }, (error: any) => {
-      console.log(error);//en caso de error se imprime en consola el error
-    });
-  }
+    this.comentarioService.getListComentarios().suscribe(data=>
+      {//se obtienen los datos de la API con la función getListComentarios() y se almacenan en la variable data
+        this.listComentarios = data;
+      //se imprime en consola los datos obtenidos de la API
+      }, error => {
+        console.log(error);//en caso de error se imprime en consola el error
+      });
+    }
 }
