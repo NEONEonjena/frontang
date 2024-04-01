@@ -30,5 +30,10 @@ export class ListComentariosComponent implements OnInit {
   
   eliminarComentario(id: any){
     console.log(id);
+    this._comentarioService.deleteComentario(id).suscribe(data =>{
+      this.getComentarios();
+    }, error => {
+      console.log(error);
+    });
   }
 }
