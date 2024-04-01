@@ -12,9 +12,11 @@ export class ComentarioService {
 
   constructor(private http: HttpClient) { }
 
-  getListComentarios(): Observable<any>
+  getListComentarios(): Observable<any> {
   //en este método se utiliza observable para poder obtener los datos de la API
-      {
-  return this.http.get(this.myAppurl + this.myApiurl);
-}
+        return this.http.get(this.myAppurl + this.myApiurl);
+      }
+  deleteComentario(id: number): Observable<any> {
+    return this.http.delete(this.myAppUrl + this.myApiUrl + id);
+  }
 }
